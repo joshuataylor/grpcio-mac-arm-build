@@ -18,7 +18,10 @@ jobs:
     steps:
       # Used to host cibuildwheel
       - name: Set up Python
-        uses: actions/setup-python@v4      
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
       - name: Download latest ${{ matrix.package }} stable tarball
         run: |
           pip download --no-binary ${{ matrix.package }} ${{ matrix.package }}==1.48.1
