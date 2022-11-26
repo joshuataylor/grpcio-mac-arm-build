@@ -24,7 +24,7 @@ jobs:
 
       - name: Download latest ${{ matrix.package }} stable tarball
         run: |
-          pip download --no-binary ${{ matrix.package }} ${{ matrix.package }}==1.48
+          pip download --no-binary ${{ matrix.package }} ${{ matrix.package }}==1.47.2
           tar xf *.tar.gz
           
       - name: Install cibuildwheel
@@ -50,7 +50,7 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          name: "grpcio 1.48"
-          tag_name: v1.48
+          name: "grpcio 1.47.2"
+          tag_name: v1.47.2
           files: ./wheelhouse/*.whl
-          body: "Apple Silicon built binaries for the grpcio 1.48 Python library."
+          body: "Apple Silicon built binaries for the grpcio 1.47.2 Python library."
